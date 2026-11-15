@@ -1,6 +1,6 @@
 # fiap-tech-challenge-inventory-database-infrastructure
 
-Infraestrutura do banco de dados do **Inventory Service** (estoque de peças e insumos) do Tech Challenge — FIAP Pós-Tech, Arquitetura de Software, turma 15SOAT, **Fase 4** (microsserviços + Saga). Provisiona, via Terraform, uma instância **Amazon RDS for PostgreSQL** só deste serviço, e entrega ao repositório do serviço, sem intervenção manual, as credenciais de conexão.
+Infraestrutura do banco de dados do **Inventory Service** (estoque de peças e insumos) do Tech Challenge — FIAP Pós-Tech, Arquitetura de Software, turma 15SOAT. Provisiona, via Terraform, uma instância **Amazon RDS for PostgreSQL** só deste serviço, e entrega ao repositório do serviço, sem intervenção manual, as credenciais de conexão.
 
 | Repositório | Papel |
 |---|---|
@@ -85,7 +85,7 @@ Todas têm valor padrão (ver [`variables.tf`](variables.tf)):
 - Um `terraform plan` offline, com as referências ao cluster trocadas por valores fixos, mostra os 4 recursos esperados com os nomes, a porta 5432 e o PostgreSQL 16.
 - O gerador de senha foi exercitado várias vezes: tamanho 20, só caracteres permitidos e a senha sobrevive intacta a uma ida e volta por um shell com aspas duplas.
 
-**Não validado:** o `apply` contra a AWS real (o RDS não existe em emuladores gratuitos) e o envio dos secrets ao repositório do serviço, que dependem das credenciais do Lab e do token. Isso é verificado na fase de validação no Lab.
+**Não validado:** o `apply` contra a AWS real (o RDS não existe em emuladores gratuitos) e o envio dos secrets ao repositório do serviço, que dependem das credenciais do Lab e do token. Isso é verificado na validação no Lab.
 
 ## APIs
 
